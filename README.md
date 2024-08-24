@@ -32,6 +32,10 @@ Utilizando unicamente observables y sus operadores, realizar lo siguiente:
   "species": "Alien"
 }
 ```
+* Imprimir por consola unicamente el objeto construido
+
+
+
 
 **Plus: construir una card y renderizar la data de la respuesta junto con la imagen del personaje**
 
