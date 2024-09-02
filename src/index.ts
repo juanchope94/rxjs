@@ -5,7 +5,7 @@ import { catchError, debounceTime, map, switchMap } from "rxjs/operators";
 const inputQuery = document.getElementById('character-name');
 
 const inputEvent$ = fromEvent<KeyboardEvent>(inputQuery, 'keyup').pipe(
-    debounceTime(1000),
+    debounceTime(5000),
     map((event) =>{
       const input = event.target as HTMLInputElement;
       return input.value;
