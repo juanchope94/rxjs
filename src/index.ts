@@ -11,25 +11,26 @@ const inputEvent$ = fromEvent<KeyboardEvent>(inputQuery, 'keyup').pipe(
       return input.value;
     }),
     switchMap((character)=>{
-      return ajax.getJSON(`https://rickandmortyapi.com/api/character/?name=${character}`)
-    }),
-    map((response:any) => {
-      const firstCharacter = response?.results[0];
-      return {
-        name: firstCharacter.name,
-        image: firstCharacter.image,
-        gender: firstCharacter.gender,
-        species: firstCharacter.species,
-      };
-    }),
-    catchError((err:any) => {
-      console.error(err);
-      return of({
-        name: "Alien Googah",
-        image: "https://rickandmortyapi.com/api/character/avatar/14.jpeg",
-        gender: "unknown",
-        species: "Alien"
-      });
+      return ajax.getJSON(`https://rickandmortyapi.com/api/character/?name=${character}`).pipe(
+        map((response:any) => {
+          const firstCharacter = response?.results[0];
+          return {
+            name: firstCharacter.name,
+            image: firstCharacter.image,
+            gender: firstCharacter.gender,
+            species: firstCharacter.species,
+          };
+        }),
+        catchError((err:any) => {
+          console.error(err);
+          return of({
+            name: "Alien Googah",
+            image: "https://rickandmortyapi.com/api/character/avatar/14.jpeg",
+            gender: "unknown",
+            species: "Alien"
+          });
+        })
+      );
     })
 );
 
