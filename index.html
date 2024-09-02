@@ -7,11 +7,32 @@
     <title>RxJs</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/frontdojo.png">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>RxJs</h1>
-    <hr>
-    <img width="500px" src="assets/img/frontdojo.png"/>
+    <div class="flex justify-center">
+        <img width="500px" src="assets/img/frontdojo.png"/>
+    </div>
+
+    <div class="mt-6 w-1/2 mx-auto">
+        <label class="block text-slate-950 text-md font-bold mb-2" for="username">
+            Ingrese el nombre del personaje
+        </label>
+        <input class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="character-name" type="text" placeholder="Morty...">
+    </div>
+
+    <div class="card mt-10 flex justify-center">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" id="image-character" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2" id="name-character">Buscanding....</div>
+              <p class="gender-character text-gray-700 text-base" id="gender-character">
+              </p>
+              <p class="species-character text-gray-700 text-base" id="species-character">
+              </p>
+            </div>
+        </div>
+    </div>
     <script src="bundle.js"></script>
 </body>
 </html>
